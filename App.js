@@ -12,7 +12,15 @@ import HomeScreen from "./screens/HomeScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import MemoryScreen from "./screens/MemoryScreen";
 import { createTheme } from "@rneui/themed";
-
+/**
+ * App Component
+ *
+ * The root component of the React Native application. It sets up the navigation structure,
+ * global themes, and provides Redux store integration.
+ *
+ * @returns {JSX.Element} The main application component.
+ *
+ */
 export default function App() {
   const Stack = createNativeStackNavigator();
   const store = configureStore({

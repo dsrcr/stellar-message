@@ -1,14 +1,25 @@
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { Button, Image, Input } from "@rneui/base";
-import { Formik, useFormik } from "formik";
+import { Formik } from "formik";
 import { useState } from "react";
-import { TextInput } from "react-native";
 import { Text, View, Pressable, KeyboardAvoidingView } from "react-native";
 import tw from "twrnc";
 import * as yup from "yup";
+
+/**
+ * LoginScreen Component
+ *
+ * The component responsible for rendering the login screen of the application.
+ * It includes input fields for email and password, a "Login" button, and options
+ * for password recovery and social login.
+ *
+ * @param {object} navigation - The navigation prop for navigating between screens.
+ *
+ * @returns {JSX.Element} The login screen component.
+ *
+ */
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
-  console.log(email);
   const [password, setPassword] = useState("");
   const validationSchema = yup.object().shape({
     email: yup
