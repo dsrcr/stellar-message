@@ -12,6 +12,10 @@ import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import MemoryScreen from './screens/MemoryScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import { useState, createContext, useContext, useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './config/firebaseConfig';
+import { ActivityIndicator } from 'react-native';
 
 /**
  * App Component
@@ -22,8 +26,67 @@ import RegisterScreen from './screens/RegisterScreen';
  * @returns {JSX.Element} The main application component.
  *
  */
+
+const Stack = createNativeStackNavigator();
+const globalScreenOptions = {
+  headerStyle: { backgroundColor: '#4AA0D5' },
+  headerTitleStyle: { color: 'white' },
+  headerTintColor: 'white',
+};
+const AuthenticatedUserContext = createContext({});
+const AuthenticatedUserProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  return (
+    <AuthenticatedUserContext.Provider value={{ user, setUser }}>
+      {children}
+    </AuthenticatedUserContext.Provider>
+  );
+};
+
+function AuthNavigationStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Chat" component={ChatScreen} />
+      <Stack.Screen name="Memory" component={MemoryScreen} />
+    </Stack.Navigator>
+  );
+}
+function NavigationStack() {
+  return (
+    <Stack.Navigator screenOptions={globalScreenOptions}>
+      <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" options={{ headerShown: false }} component={RegisterScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function Navigator() {
+  const { user, setUser } = useContext(AuthenticatedUserContext);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (authenticatedUser) => {
+      authenticatedUser ? setUser(authenticatedUser) : setUser(null);
+      setLoading(false);
+    });
+    console.log('User', user);
+    return () => unsubscribe();
+  }, [user]);
+
+  if (loading) {
+    <ActivityIndicator size={'large'} />;
+  }
+
+  return (
+    <NavigationContainer>
+      {user ? <AuthNavigationStack /> : <NavigationStack />}
+    </NavigationContainer>
+  );
+}
+
 export default function App() {
-  const Stack = createNativeStackNavigator();
   const store = configureStore({
     reducer: {
       themeSlice,
@@ -36,29 +99,13 @@ export default function App() {
     mode: 'dark',
   });
 
-  const globalScreenOptions = {
-    headerStyle: { backgroundColor: '#4AA0D5' },
-    headerTitleStyle: { color: 'white' },
-    headerTintColor: 'white',
-  };
-
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator screenOptions={globalScreenOptions}>
-            <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-            <Stack.Screen
-              name="Register"
-              options={{ headerShown: false }}
-              component={RegisterScreen}
-            />
-            <Stack.Screen name="Chat" component={ChatScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Memory" component={MemoryScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </ThemeProvider>
-    </Provider>
+    <AuthenticatedUserProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Navigator />
+        </ThemeProvider>
+      </Provider>
+    </AuthenticatedUserProvider>
   );
 }

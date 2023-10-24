@@ -1,10 +1,14 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Button, Image } from '@rneui/base';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { Text, View, Pressable, KeyboardAvoidingView, TextInput } from 'react-native';
 
 import tw from 'twrnc';
 import * as yup from 'yup';
+import { auth } from '../config/firebaseConfig';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 /**
  * LoginScreen Component
@@ -20,6 +24,7 @@ import * as yup from 'yup';
  */
 
 export default function LoginScreen({ navigation }) {
+  const { t } = useTranslation();
   const validationSchema = yup.object().shape({
     email: yup.string().email('Please enter a valid email.').required('Email Address is required.'),
     password: yup.string().min(6).max(24).required('Minimum 6 characters required.'),
@@ -30,6 +35,9 @@ export default function LoginScreen({ navigation }) {
       validationSchema={validationSchema}
       onSubmit={(values) => {
         console.log(values);
+        signInWithEmailAndPassword(auth, values.email, values.password)
+          .then(() => console.log(`Login success. Logged in with ${values.email}`))
+          .catch((error) => console.error('Login error', error.message));
       }}>
       {({ values, handleSubmit, handleChange, isValid, errors }) => (
         <KeyboardAvoidingView style={tw`flex justify-center items-center p-8`}>
@@ -44,7 +52,7 @@ export default function LoginScreen({ navigation }) {
             id="email"
             inputMode="email"
             style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder="E-mail address"
+            placeholder={t('email-address')}
             placeholderTextColor="gray"
             value={values.email}
             onChangeText={handleChange('email')}
