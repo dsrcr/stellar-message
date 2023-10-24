@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegisterScreen /> renders correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "display": "flex",
+      "justifyContent": "center",
+      "paddingBottom": 32,
+      "paddingLeft": 32,
+      "paddingRight": 32,
+      "paddingTop": 32,
+    }
+  }
+>
+  <TextInput
+    autoFocus={true}
+    id="email"
+    inputMode="email"
+    keyboardType="email-address"
+    name="email"
+    onChangeText={[Function]}
+    placeholder="E-mail address"
+    placeholderTextColor="gray"
+    style={
+      {
+        "borderColor": "#d1d5db",
+        "borderRadius": 12,
+        "borderWidth": 2,
+        "marginTop": 32,
+        "paddingBottom": 16,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "width": "100%",
+      }
+    }
+    textContentType="emailAddress"
+    value=""
+  />
+  <TextInput
+    id="password"
+    inputMode="text"
+    name="password"
+    onChangeText={[Function]}
+    placeholder="Password"
+    placeholderTextColor="gray"
+    secureTextEntry={true}
+    style={
+      {
+        "borderColor": "#d1d5db",
+        "borderRadius": 12,
+        "borderWidth": 2,
+        "marginTop": 32,
+        "paddingBottom": 16,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "width": "100%",
+      }
+    }
+    textContentType="password"
+    value=""
+  />
+  <TextInput
+    id="confirmPassword"
+    inputMode="text"
+    name="password"
+    onChangeText={[Function]}
+    placeholder="Confirm password"
+    placeholderTextColor="gray"
+    secureTextEntry={true}
+    style={
+      {
+        "borderColor": "#d1d5db",
+        "borderRadius": 12,
+        "borderWidth": 2,
+        "marginTop": 32,
+        "paddingBottom": 16,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 16,
+        "width": "100%",
+      }
+    }
+    textContentType="password"
+    value=""
+  />
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        {
+          "borderRadius": 2,
+        },
+        {
+          "paddingBottom": 16,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 16,
+          "width": "100%",
+        },
+        false,
+      ]
+    }
+    testID="RNE_BUTTON_WRAPPER"
+  >
+    <View
+      accessibilityRole="button"
+      accessibilityState={
+        {
+          "busy": false,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 2,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 12,
+            "paddingHorizontal": 14,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "white",
+              "fontSize": 18,
+              "paddingVertical": 1,
+              "textAlign": "center",
+            }
+          }
+        >
+          Register
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+      }
+    }
+  >
+    <Text>
+      Already have an account? 
+    </Text>
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <Text>
+        Login
+      </Text>
+    </View>
+  </View>
+</View>
+`;
