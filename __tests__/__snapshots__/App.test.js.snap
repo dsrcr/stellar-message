@@ -82,9 +82,7 @@ exports[`<App /> renders correctly 1`] = `
             style={
               {
                 "alignItems": "center",
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
+                "display": "flex",
                 "justifyContent": "center",
                 "paddingBottom": 32,
                 "paddingLeft": 32,
@@ -175,118 +173,54 @@ exports[`<App /> renders correctly 1`] = `
                 testID="RNE__Image__children__container"
               />
             </View>
-            <View
+            <TextInput
+              id="email"
+              inputMode="email"
+              keyboardType="email-address"
+              name="email"
+              onChangeText={[Function]}
+              placeholder="E-mail address"
+              placeholderTextColor="gray"
               style={
                 {
-                  "paddingHorizontal": 10,
+                  "borderColor": "#d1d5db",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "marginTop": 32,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
                   "width": "100%",
                 }
               }
-              testID="RNE__Input__view-wrapper"
-            >
-              <View
-                collapsable={false}
-                style={
-                  {
-                    "alignItems": "center",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#86939e",
-                    "flexDirection": "row",
-                    "transform": [
-                      {
-                        "translateX": 0,
-                      },
-                    ],
-                  }
-                }
-              >
-                <TextInput
-                  autoComplete="email"
-                  editable={true}
-                  keyboardType="email-address"
-                  onChange={[Function]}
-                  placeholder="E-mail Address"
-                  placeholderTextColor="#86939e"
-                  required={true}
-                  style={
-                    {
-                      "color": "#242424",
-                      "flex": 1,
-                      "fontSize": 18,
-                      "minHeight": 40,
-                      "paddingTop": 32,
-                    }
-                  }
-                  testID="RNE__Input__text-input"
-                  underlineColorAndroid="transparent"
-                  value=""
-                />
-              </View>
-              <Text
-                style={
-                  {
-                    "color": "#ff190c",
-                    "fontSize": 12,
-                    "margin": 5,
-                  }
-                }
-              />
-            </View>
-            <View
+              textContentType="emailAddress"
+              value=""
+            />
+            <TextInput
+              id="password"
+              inputMode="text"
+              name="password"
+              onChangeText={[Function]}
+              placeholder="Password"
+              placeholderTextColor="gray"
+              secureTextEntry={true}
               style={
                 {
-                  "paddingHorizontal": 10,
+                  "borderColor": "#d1d5db",
+                  "borderRadius": 12,
+                  "borderWidth": 2,
+                  "marginTop": 32,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
                   "width": "100%",
                 }
               }
-              testID="RNE__Input__view-wrapper"
-            >
-              <View
-                collapsable={false}
-                style={
-                  {
-                    "alignItems": "center",
-                    "borderBottomWidth": 1,
-                    "borderColor": "#86939e",
-                    "flexDirection": "row",
-                    "transform": [
-                      {
-                        "translateX": 0,
-                      },
-                    ],
-                  }
-                }
-              >
-                <TextInput
-                  editable={true}
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  placeholderTextColor="#86939e"
-                  secureTextEntry={true}
-                  style={
-                    {
-                      "color": "#242424",
-                      "flex": 1,
-                      "fontSize": 18,
-                      "minHeight": 40,
-                      "paddingTop": 16,
-                    }
-                  }
-                  testID="RNE__Input__text-input"
-                  underlineColorAndroid="transparent"
-                />
-              </View>
-              <Text
-                style={
-                  {
-                    "color": "#ff190c",
-                    "fontSize": 12,
-                    "margin": 5,
-                  }
-                }
-              />
-            </View>
+              textContentType="password"
+              value=""
+            />
             <View
               accessibilityState={
                 {
@@ -340,15 +274,11 @@ exports[`<App /> renders correctly 1`] = `
                     "borderRadius": 2,
                   },
                   {
-                    "marginBottom": 16,
-                    "marginLeft": 16,
-                    "marginRight": 16,
-                    "marginTop": 16,
                     "paddingBottom": 16,
                     "paddingLeft": 16,
                     "paddingRight": 16,
                     "paddingTop": 16,
-                    "width": 320,
+                    "width": "100%",
                   },
                   false,
                 ]
@@ -400,8 +330,8 @@ exports[`<App /> renders correctly 1`] = `
                       "borderWidth": 0,
                       "flexDirection": "row",
                       "justifyContent": "center",
-                      "padding": 8,
-                      "paddingHorizontal": 10,
+                      "padding": 12,
+                      "paddingHorizontal": 14,
                     }
                   }
                 >
@@ -427,11 +357,9 @@ exports[`<App /> renders correctly 1`] = `
               style={
                 {
                   "alignItems": "center",
+                  "display": "flex",
                   "flexDirection": "row",
-                  "paddingBottom": 8,
-                  "paddingLeft": 8,
-                  "paddingRight": 8,
-                  "paddingTop": 8,
+                  "justifyContent": "center",
                 }
               }
             >
@@ -445,15 +373,11 @@ exports[`<App /> renders correctly 1`] = `
                       "borderRadius": 2,
                     },
                     {
-                      "marginBottom": 16,
-                      "marginLeft": 16,
-                      "marginRight": 16,
-                      "marginTop": 16,
+                      "minWidth": 164,
                       "paddingBottom": 16,
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 16,
-                      "width": 160,
                     },
                     false,
                   ]
@@ -505,8 +429,8 @@ exports[`<App /> renders correctly 1`] = `
                         "borderWidth": 0,
                         "flexDirection": "row",
                         "justifyContent": "center",
-                        "padding": 8,
-                        "paddingHorizontal": 10,
+                        "padding": 12,
+                        "paddingHorizontal": 14,
                       }
                     }
                   >
@@ -524,15 +448,11 @@ exports[`<App /> renders correctly 1`] = `
                       "borderRadius": 2,
                     },
                     {
-                      "marginBottom": 16,
-                      "marginLeft": 16,
-                      "marginRight": 16,
-                      "marginTop": 16,
+                      "minWidth": 164,
                       "paddingBottom": 16,
                       "paddingLeft": 16,
                       "paddingRight": 16,
                       "paddingTop": 16,
-                      "width": 160,
                     },
                     false,
                   ]
@@ -584,8 +504,8 @@ exports[`<App /> renders correctly 1`] = `
                         "borderWidth": 0,
                         "flexDirection": "row",
                         "justifyContent": "center",
-                        "padding": 8,
-                        "paddingHorizontal": 10,
+                        "padding": 12,
+                        "paddingHorizontal": 14,
                       }
                     }
                   >
