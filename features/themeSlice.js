@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  theme: "dark",
+  theme: 'dark',
 };
 
 /**
@@ -29,7 +29,7 @@ const initialState = {
  * store.dispatch(setTheme("dark"));
  */
 export const themeSlice = createSlice({
-  name: "theme",
+  name: 'theme',
   initialState,
   reducers: {
     setTheme: (state, action) => {

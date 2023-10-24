@@ -1,14 +1,13 @@
-import { initializeApp } from "firebase/app";
+import Constants from 'expo-constants';
+import { initializeApp } from 'firebase/app';
 import {
   browserPopupRedirectResolver,
   browserSessionPersistence,
   getAuth,
   GoogleAuthProvider,
   initializeAuth,
-} from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-
-import Constants from "expo-constants";
+} from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: Constants.manifest.extra.apiKey,

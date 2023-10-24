@@ -1,0 +1,664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders correctly 1`] = `
+<RNCSafeAreaProvider
+  onInsetsChange={[Function]}
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <RNSScreenStack
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <RNSScreen
+      collapsable={false}
+      gestureResponseDistance={
+        {
+          "bottom": -1,
+          "end": -1,
+          "start": -1,
+          "top": -1,
+        }
+      }
+      nativeBackButtonDismissalEnabled={false}
+      onAppear={[Function]}
+      onDisappear={[Function]}
+      onDismissed={[Function]}
+      onGestureCancel={[Function]}
+      onHeaderBackButtonClicked={[Function]}
+      onNativeDismissCancelled={[Function]}
+      onTransitionProgress={[Function]}
+      onWillDisappear={[Function]}
+      replaceAnimation="push"
+      sheetAllowedDetents="large"
+      sheetCornerRadius={-1}
+      sheetExpandsWhenScrolledToEdge={true}
+      sheetGrabberVisible={false}
+      sheetLargestUndimmedDetent="all"
+      stackPresentation="push"
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      swipeDirection="horizontal"
+    >
+      <View
+        accessibilityElementsHidden={false}
+        importantForAccessibility="auto"
+        style={
+          {
+            "flex": 1,
+            "flexDirection": "column-reverse",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            [
+              {
+                "flex": 1,
+              },
+              {
+                "backgroundColor": "rgb(242, 242, 242)",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            onLayout={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+                "paddingBottom": 32,
+                "paddingLeft": 32,
+                "paddingRight": 32,
+                "paddingTop": 32,
+              }
+            }
+          >
+            <View
+              accessibilityIgnoresInvertColors={true}
+              style={
+                {
+                  "backgroundColor": "transparent",
+                  "overflow": "hidden",
+                  "position": "relative",
+                }
+              }
+            >
+              <Image
+                onLoad={[Function]}
+                source={
+                  {
+                    "uri": "https://raw.githubusercontent.com/dsrcr/stellar-message/master/assets/stellarnet_logo.svg?token=GHSAT0AAAAAACJJPOLD6WT5V6YXE2RJP4Y6ZJW2STA",
+                  }
+                }
+                style={
+                  {
+                    "bottom": 0,
+                    "height": 280,
+                    "left": 0,
+                    "paddingBottom": 16,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 280,
+                  }
+                }
+                testID="RNE__Image"
+                transitionDuration={360}
+              />
+              <View
+                accessibilityElementsHidden={true}
+                collapsable={false}
+                importantForAccessibility="no-hide-descendants"
+                pointerEvents="none"
+                style={
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "opacity": 1,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#bdbdbd",
+                      "height": 280,
+                      "justifyContent": "center",
+                      "paddingBottom": 16,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                      "paddingTop": 8,
+                      "width": 280,
+                    }
+                  }
+                  testID="RNE__Image__placeholder"
+                />
+              </View>
+              <View
+                style={
+                  {
+                    "height": 280,
+                    "paddingBottom": 16,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                    "paddingTop": 8,
+                    "width": 280,
+                  }
+                }
+                testID="RNE__Image__children__container"
+              />
+            </View>
+            <View
+              style={
+                {
+                  "paddingHorizontal": 10,
+                  "width": "100%",
+                }
+              }
+              testID="RNE__Input__view-wrapper"
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "alignItems": "center",
+                    "borderBottomWidth": 1,
+                    "borderColor": "#86939e",
+                    "flexDirection": "row",
+                    "transform": [
+                      {
+                        "translateX": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <TextInput
+                  autoComplete="email"
+                  editable={true}
+                  keyboardType="email-address"
+                  onChange={[Function]}
+                  placeholder="E-mail Address"
+                  placeholderTextColor="#86939e"
+                  required={true}
+                  style={
+                    {
+                      "color": "#242424",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "minHeight": 40,
+                      "paddingTop": 32,
+                    }
+                  }
+                  testID="RNE__Input__text-input"
+                  underlineColorAndroid="transparent"
+                  value=""
+                />
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#ff190c",
+                    "fontSize": 12,
+                    "margin": 5,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "paddingHorizontal": 10,
+                  "width": "100%",
+                }
+              }
+              testID="RNE__Input__view-wrapper"
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "alignItems": "center",
+                    "borderBottomWidth": 1,
+                    "borderColor": "#86939e",
+                    "flexDirection": "row",
+                    "transform": [
+                      {
+                        "translateX": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <TextInput
+                  editable={true}
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  placeholderTextColor="#86939e"
+                  secureTextEntry={true}
+                  style={
+                    {
+                      "color": "#242424",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "minHeight": 40,
+                      "paddingTop": 16,
+                    }
+                  }
+                  testID="RNE__Input__text-input"
+                  underlineColorAndroid="transparent"
+                />
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#ff190c",
+                    "fontSize": 12,
+                    "margin": 5,
+                  }
+                }
+              />
+            </View>
+            <View
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
+                }
+              }
+            >
+              <Text>
+                Forgot password?
+              </Text>
+            </View>
+            <View
+              style={
+                [
+                  {
+                    "overflow": "hidden",
+                  },
+                  {
+                    "borderRadius": 2,
+                  },
+                  {
+                    "marginBottom": 16,
+                    "marginLeft": 16,
+                    "marginRight": 16,
+                    "marginTop": 16,
+                    "paddingBottom": 16,
+                    "paddingLeft": 16,
+                    "paddingRight": 16,
+                    "paddingTop": 16,
+                    "width": 320,
+                  },
+                  false,
+                ]
+              }
+              testID="RNE_BUTTON_WRAPPER"
+            >
+              <View
+                accessibilityRole="button"
+                accessibilityState={
+                  {
+                    "busy": false,
+                    "checked": undefined,
+                    "disabled": false,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#2089dc",
+                      "borderColor": "#2089dc",
+                      "borderRadius": 2,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "padding": 8,
+                      "paddingHorizontal": 10,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingVertical": 1,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    Login
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <Text>
+              or use
+            </Text>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "overflow": "hidden",
+                    },
+                    {
+                      "borderRadius": 2,
+                    },
+                    {
+                      "marginBottom": 16,
+                      "marginLeft": 16,
+                      "marginRight": 16,
+                      "marginTop": 16,
+                      "paddingBottom": 16,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 16,
+                      "width": 160,
+                    },
+                    false,
+                  ]
+                }
+                testID="RNE_BUTTON_WRAPPER"
+              >
+                <View
+                  accessibilityRole="button"
+                  accessibilityState={
+                    {
+                      "busy": false,
+                      "checked": undefined,
+                      "disabled": false,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#2089dc",
+                        "borderColor": "#2089dc",
+                        "borderRadius": 2,
+                        "borderWidth": 0,
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                        "padding": 8,
+                        "paddingHorizontal": 10,
+                      }
+                    }
+                  >
+                    <Text />
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  [
+                    {
+                      "overflow": "hidden",
+                    },
+                    {
+                      "borderRadius": 2,
+                    },
+                    {
+                      "marginBottom": 16,
+                      "marginLeft": 16,
+                      "marginRight": 16,
+                      "marginTop": 16,
+                      "paddingBottom": 16,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 16,
+                      "width": 160,
+                    },
+                    false,
+                  ]
+                }
+                testID="RNE_BUTTON_WRAPPER"
+              >
+                <View
+                  accessibilityRole="button"
+                  accessibilityState={
+                    {
+                      "busy": false,
+                      "checked": undefined,
+                      "disabled": false,
+                      "expanded": undefined,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#2089dc",
+                        "borderColor": "#2089dc",
+                        "borderRadius": 2,
+                        "borderWidth": 0,
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                        "padding": 8,
+                        "paddingHorizontal": 10,
+                      }
+                    }
+                  >
+                    <Text />
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text>
+                Don't have an account? 
+              </Text>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+              >
+                <Text>
+                  Register
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+      <RNSScreenStackHeaderConfig
+        backButtonInCustomView={false}
+        backTitleVisible={true}
+        backgroundColor="#4AA0D5"
+        color="white"
+        direction="ltr"
+        disableBackButtonMenu={false}
+        hidden={true}
+        hideBackButton={false}
+        largeTitleHideShadow={false}
+        title="Login"
+        titleColor="white"
+        topInsetEnabled={false}
+        translucent={false}
+      />
+    </RNSScreen>
+  </RNSScreenStack>
+</RNCSafeAreaProvider>
+`;

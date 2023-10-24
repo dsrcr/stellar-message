@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  settings: "default",
+  settings: 'default',
 };
 /**
  * Settings Slice and Reducer
@@ -29,7 +29,7 @@ const initialState = {
  * store.dispatch(setSettings({ theme: "dark" }));
  */
 export const settingsSlice = createSlice({
-  name: "settings",
+  name: 'settings',
   initialState,
   reducers: {
     setSettings: (state, action) => {

@@ -1,17 +1,18 @@
-import React from "react";
-import { NavigationContainer, ThemeProvider } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { configureStore } from "@reduxjs/toolkit";
-import { Provider, useSelector } from "react-redux";
-import themeSlice from "./features/themeSlice";
-import userSlice from "./features/userSlice";
-import settingsSlice from "./features/settingsSlice";
-import LoginScreen from "./screens/LoginScreen";
-import ChatScreen from "./screens/ChatScreen";
-import HomeScreen from "./screens/HomeScreen";
-import RegisterScreen from "./screens/RegisterScreen";
-import MemoryScreen from "./screens/MemoryScreen";
-import { createTheme } from "@rneui/themed";
+import { NavigationContainer, ThemeProvider } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { configureStore } from '@reduxjs/toolkit';
+import { createTheme } from '@rneui/themed';
+import { Provider } from 'react-redux';
+
+import settingsSlice from './features/settingsSlice';
+import themeSlice from './features/themeSlice';
+import userSlice from './features/userSlice';
+import ChatScreen from './screens/ChatScreen';
+import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
+import MemoryScreen from './screens/MemoryScreen';
+import RegisterScreen from './screens/RegisterScreen';
+
 /**
  * App Component
  *
@@ -32,13 +33,13 @@ export default function App() {
   });
 
   const theme = createTheme({
-    mode: "dark",
+    mode: 'dark',
   });
 
   const globalScreenOptions = {
-    headerStyle: { backgroundColor: "#4AA0D5" },
-    headerTitleStyle: { color: "white" },
-    headerTintColor: "white",
+    headerStyle: { backgroundColor: '#4AA0D5' },
+    headerTitleStyle: { color: 'white' },
+    headerTintColor: 'white',
   };
 
   return (
@@ -46,11 +47,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <NavigationContainer>
           <Stack.Navigator screenOptions={globalScreenOptions}>
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Login"
-              component={LoginScreen}
-            />
+            <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
             <Stack.Screen
               name="Register"
               options={{ headerShown: false }}
