@@ -1,9 +1,12 @@
 import { Button } from '@rneui/base';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { Text, View, Pressable, KeyboardAvoidingView, TextInput } from 'react-native';
 
 import tw from 'twrnc';
 import * as yup from 'yup';
+import { auth } from '../config/firebaseConfig';
+import { useTranslation } from 'react-i18next';
 
 /**
  * RegisterScreen component for user registration.
@@ -18,6 +21,7 @@ import * as yup from 'yup';
  */
 
 export default function RegisterScreen({ navigation }) {
+  const { t } = useTranslation();
   const validationSchema = yup.object().shape({
     email: yup.string().email('Please enter a valid email.').required('Email Address is required.'),
     password: yup.string().min(6).max(24).required('Minimum 6 characters required.'),
@@ -29,6 +33,13 @@ export default function RegisterScreen({ navigation }) {
       validationSchema={validationSchema}
       onSubmit={(values) => {
         console.log(values);
+        createUserWithEmailAndPassword(auth, values.email, values.password)
+          .then(() => {
+            console.log(`Successfully registered with ${values.email}`);
+          })
+          .catch((error) => {
+            console.error('Register error', error.message);
+          });
       }}>
       {({ values, handleSubmit, handleChange, isValid, errors }) => (
         <KeyboardAvoidingView style={tw`flex justify-center items-center p-8`}>
@@ -37,7 +48,7 @@ export default function RegisterScreen({ navigation }) {
             id="email"
             inputMode="email"
             style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder="E-mail address"
+            placeholder={t('email-address')}
             placeholderTextColor="gray"
             value={values.email}
             onChangeText={handleChange('email')}
@@ -52,7 +63,7 @@ export default function RegisterScreen({ navigation }) {
             value={values.password}
             onChangeText={handleChange('password')}
             style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder="Password"
+            placeholder={t('password')}
             placeholderTextColor="gray"
             secureTextEntry
             textContentType="password"
@@ -66,11 +77,11 @@ export default function RegisterScreen({ navigation }) {
             value={values.confirmPassword}
             onChangeText={handleChange('confirmPassword')}
             style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder="Confirm password"
+            placeholder={t('confirm-password')}
             placeholderTextColor="gray"
             secureTextEntry
             textContentType="password"
-            name="password"
+            name="confirmPassword"
           />
 
           {errors.confirmPassword ? (
@@ -80,13 +91,13 @@ export default function RegisterScreen({ navigation }) {
             disabled={!isValid}
             size="lg"
             onPress={handleSubmit}
-            title="Register"
+            title={t('register')}
             containerStyle={tw`w-full p-4`}
           />
           <View style={tw`flex-row`}>
-            <Text>Already have an account? </Text>
+            <Text>{t('already-have')}</Text>
             <Pressable onPress={() => navigation.navigate('Login')}>
-              <Text>Login</Text>
+              <Text>{t('login')}</Text>
             </Pressable>
           </View>
         </KeyboardAvoidingView>

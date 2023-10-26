@@ -17,6 +17,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebaseConfig';
 import { ActivityIndicator } from 'react-native';
 
+import './services/i18next';
+
 /**
  * App Component
  *
@@ -73,7 +75,7 @@ function Navigator() {
     });
     console.log('User', user);
     return () => unsubscribe();
-  }, [user]);
+  }, []);
 
   if (loading) {
     <ActivityIndicator size={'large'} />;

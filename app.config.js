@@ -6,10 +6,10 @@ export default {
     slug: 'stellar-message',
     version: '1.0.0',
     orientation: 'portrait',
-    icon: './assets/stellarnet-logo.svg',
+    icon: './assets/logo.png',
     userInterfaceStyle: 'dark',
     splash: {
-      image: './assets/splash.png',
+      image: './assets/logo.png',
       resizeMode: 'contain',
       backgroundColor: '#ffffff',
     },
@@ -19,12 +19,12 @@ export default {
     },
     android: {
       adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
+        foregroundImage: './assets/logo.png',
         backgroundColor: '#ffffff',
       },
     },
     web: {
-      favicon: './assets/favicon.png',
+      favicon: './assets/logo.png',
     },
     extra: {
       apiKey: process.env.API_KEY,

@@ -1,9 +1,11 @@
 {
   "email-address": "E-mail address",
-  "password": "password",
+  "password": "Password",
   "forgot-password": "Forgot password?",
   "login": "Login",
   "or-use": "or use",
   "dont-have": "Don't have an account? ",
-  "register": "register"
+  "register": "Register",
+  "confirm-password": "Confirm Password",
+  "already-have": "Already have an account? "
 }

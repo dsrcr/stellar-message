@@ -2,8 +2,10 @@
   "email-address": "Adres E-mail",
   "password": "Hasło",
   "forgot-password": "Zapomniałeś hasła?",
+  "confirm-password": "Potwierdź hasło",
   "login": "Zaloguj się",
   "or-use": "lub użyj",
   "dont-have": "Nie masz konta? ",
+  "already-have": "Masz już konto? ",
   "register": "Zarejestruj się"
 }

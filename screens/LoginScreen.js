@@ -8,7 +8,7 @@ import tw from 'twrnc';
 import * as yup from 'yup';
 import { auth } from '../config/firebaseConfig';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
+import i18next from '../services/i18next';
 
 /**
  * LoginScreen Component
@@ -67,7 +67,7 @@ export default function LoginScreen({ navigation }) {
             value={values.password}
             onChangeText={handleChange('password')}
             style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder="Password"
+            placeholder={t('password')}
             placeholderTextColor="gray"
             secureTextEntry
             textContentType="password"
@@ -76,18 +76,18 @@ export default function LoginScreen({ navigation }) {
 
           {errors.password ? <Text style={tw`text-red-500 mt-4`}>{errors.password}</Text> : null}
           <Pressable style={tw`p-4`}>
-            <Text>Forgot password?</Text>
+            <Text>{t('forgot-password')}</Text>
           </Pressable>
 
           <Button
             disabled={!isValid}
             size="lg"
             onPress={handleSubmit}
-            title="Login"
+            title={t('login')}
             containerStyle={tw`w-full p-4`}
           />
 
-          <Text>or use</Text>
+          <Text>{t('or-use')}</Text>
           <View style={tw`flex justify-center items-center flex-row`}>
             <Button
               size="lg"
@@ -102,9 +102,9 @@ export default function LoginScreen({ navigation }) {
           </View>
 
           <View style={tw`flex-row`}>
-            <Text>Don't have an account? </Text>
+            <Text>{t('dont-have')}</Text>
             <Pressable onPress={() => navigation.navigate('Register')}>
-              <Text>Register</Text>
+              <Text>{t('register')}</Text>
             </Pressable>
           </View>
         </KeyboardAvoidingView>
