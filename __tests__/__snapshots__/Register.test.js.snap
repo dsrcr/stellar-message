@@ -22,7 +22,7 @@ exports[`<RegisterScreen /> renders correctly 1`] = `
     keyboardType="email-address"
     name="email"
     onChangeText={[Function]}
-    placeholder="E-mail address"
+    placeholder="email-address"
     placeholderTextColor="gray"
     style={
       {
@@ -45,7 +45,7 @@ exports[`<RegisterScreen /> renders correctly 1`] = `
     inputMode="text"
     name="password"
     onChangeText={[Function]}
-    placeholder="Password"
+    placeholder="password"
     placeholderTextColor="gray"
     secureTextEntry={true}
     style={
@@ -67,9 +67,9 @@ exports[`<RegisterScreen /> renders correctly 1`] = `
   <TextInput
     id="confirmPassword"
     inputMode="text"
-    name="password"
+    name="confirmPassword"
     onChangeText={[Function]}
-    placeholder="Confirm password"
+    placeholder="confirm-password"
     placeholderTextColor="gray"
     secureTextEntry={true}
     style={
@@ -169,7 +169,7 @@ exports[`<RegisterScreen /> renders correctly 1`] = `
             }
           }
         >
-          Register
+          register
         </Text>
       </View>
     </View>
@@ -182,7 +182,7 @@ exports[`<RegisterScreen /> renders correctly 1`] = `
     }
   >
     <Text>
-      Already have an account? 
+      already-have
     </Text>
     <View
       accessibilityState={
@@ -216,7 +216,7 @@ exports[`<RegisterScreen /> renders correctly 1`] = `
       onStartShouldSetResponder={[Function]}
     >
       <Text>
-        Login
+        login
       </Text>
     </View>
   </View>
