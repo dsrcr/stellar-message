@@ -42,7 +42,7 @@ export default function LoginScreen({ navigation }) {
       {({ values, handleSubmit, handleChange, isValid, errors }) => (
         <KeyboardAvoidingView style={tw`flex justify-center items-center p-8`}>
           <Image
-            style={tw`w-70 h-70 p-8 pb-4`}
+            style={tw`w-70 h-70 p-8 pb-4 rounded-xl`}
             source={{
               uri: 'https://raw.githubusercontent.com/dsrcr/stellar-message/master/assets/stellarnet_logo.svg?token=GHSAT0AAAAAACJJPOLD6WT5V6YXE2RJP4Y6ZJW2STA',
             }}
@@ -88,15 +88,15 @@ export default function LoginScreen({ navigation }) {
           />
 
           <Text>{t('or-use')}</Text>
-          <View style={tw`flex justify-center items-center flex-row`}>
+          <View style={tw`flex flex-row justify-around`}>
             <Button
               size="lg"
-              containerStyle={tw`p-4 min-w-41`}
+              containerStyle={tw`p-4 w-full`}
               title={<FontAwesome5 name="google" color="white" size={24} />}
             />
             <Button
               size="lg"
-              containerStyle={tw`p-4 min-w-41`}
+              containerStyle={tw`p-4 w-full`}
               title={<FontAwesome5 name="apple" color="white" size={24} />}
             />
           </View>
