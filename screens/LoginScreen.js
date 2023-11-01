@@ -40,11 +40,11 @@ export default function LoginScreen({ navigation }) {
           .catch((error) => console.error('Login error', error.message));
       }}>
       {({ values, handleSubmit, handleChange, isValid, errors }) => (
-        <KeyboardAvoidingView style={tw`flex justify-center items-center p-8`}>
+        <KeyboardAvoidingView style={tw`flex justify-center items-center p-8 w-full h-full`}>
           <Image
             style={tw`w-70 h-70 p-8 pb-4 rounded-xl`}
             source={{
-              uri: 'https://raw.githubusercontent.com/dsrcr/stellar-message/master/assets/stellarnet_logo.svg?token=GHSAT0AAAAAACJJPOLD6WT5V6YXE2RJP4Y6ZJW2STA',
+              uri: 'https://github.com/dsrcr/stellar-message/blob/master/assets/logo.png?raw=true',
             }}
           />
           <TextInput
@@ -91,12 +91,12 @@ export default function LoginScreen({ navigation }) {
           <View style={tw`flex flex-row justify-around`}>
             <Button
               size="lg"
-              containerStyle={tw`p-4 w-full`}
+              containerStyle={tw`p-4 min-w-41`}
               title={<FontAwesome5 name="google" color="white" size={24} />}
             />
             <Button
               size="lg"
-              containerStyle={tw`p-4 w-full`}
+              containerStyle={tw`p-4 min-w-41`}
               title={<FontAwesome5 name="apple" color="white" size={24} />}
             />
           </View>
