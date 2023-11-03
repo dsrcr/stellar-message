@@ -1,4 +1,4 @@
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { Button, Image } from '@rneui/base';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
@@ -9,6 +9,7 @@ import * as yup from 'yup';
 import { auth } from '../config/firebaseConfig';
 import { useTranslation } from 'react-i18next';
 import i18next from '../services/i18next';
+import { useState } from 'react';
 
 /**
  * LoginScreen Component
@@ -24,6 +25,7 @@ import i18next from '../services/i18next';
  */
 
 export default function LoginScreen({ navigation }) {
+  const [passwordVisibility, setPasswordVisibility] = useState(true);
   const { t } = useTranslation();
   const validationSchema = yup.object().shape({
     email: yup.string().email('Please enter a valid email.').required('Email Address is required.'),
@@ -47,32 +49,50 @@ export default function LoginScreen({ navigation }) {
               uri: 'https://github.com/dsrcr/stellar-message/blob/master/assets/logo.png?raw=true',
             }}
           />
-          <TextInput
-            autoFocus
-            id="email"
-            inputMode="email"
-            style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder={t('email-address')}
-            placeholderTextColor="gray"
-            value={values.email}
-            onChangeText={handleChange('email')}
-            keyboardType="email-address"
-            textContentType="emailAddress"
-            name="email"
-          />
+
+          <View
+            style={tw`w-full border-2 border-gray-300 rounded-xl mt-8 flex flex-row items-center justify-center`}>
+            <FontAwesome name="user" color={'gray'} size={24} style={tw`m-4`} />
+            <TextInput
+              autoFocus
+              id="email"
+              inputMode="email"
+              style={tw`w-full p-4 rounded-xl`}
+              placeholder={t('email-address')}
+              placeholderTextColor="gray"
+              value={values.email}
+              onChangeText={handleChange('email')}
+              keyboardType="email-address"
+              textContentType="emailAddress"
+              name="email"
+            />
+          </View>
           {errors.email ? <Text style={tw`text-red-500 mt-4`}>{errors.email}</Text> : null}
-          <TextInput
-            id="password"
-            inputMode="text"
-            value={values.password}
-            onChangeText={handleChange('password')}
-            style={tw`w-full border-2 border-gray-300 rounded-xl p-4 mt-8`}
-            placeholder={t('password')}
-            placeholderTextColor="gray"
-            secureTextEntry
-            textContentType="password"
-            name="password"
-          />
+          <View
+            style={tw`w-full border-2 border-gray-300 rounded-xl mt-8 flex flex-row items-center justify-center`}>
+            <FontAwesome name="lock" color={'gray'} size={24} style={tw`m-4`} />
+            <TextInput
+              id="password"
+              inputMode="text"
+              style={tw`p-4 w-full rounded-xl`}
+              value={values.password}
+              onChangeText={handleChange('password')}
+              placeholder={t('password')}
+              placeholderTextColor="gray"
+              secureTextEntry={passwordVisibility}
+              textContentType="password"
+              name="password"
+            />
+            <Pressable
+              style={tw`m-4`}
+              onPress={() => setPasswordVisibility(passwordVisibility ? false : true)}>
+              {passwordVisibility ? (
+                <FontAwesome name="eye" color={'gray'} size={24} />
+              ) : (
+                <FontAwesome name="eye-slash" color={'gray'} size={24} />
+              )}
+            </Pressable>
+          </View>
 
           {errors.password ? <Text style={tw`text-red-500 mt-4`}>{errors.password}</Text> : null}
           <Pressable style={tw`p-4`}>
