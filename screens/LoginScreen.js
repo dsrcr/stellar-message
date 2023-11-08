@@ -1,5 +1,5 @@
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
-import { Button, Image } from '@rneui/base';
+import { Button, Image, color } from '@rneui/base';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Formik } from 'formik';
 import { Text, View, Pressable, KeyboardAvoidingView, TextInput } from 'react-native';
@@ -52,12 +52,11 @@ export default function LoginScreen({ navigation }) {
 
           <View
             style={tw`w-full border-2 border-gray-300 rounded-xl mt-8 flex flex-row items-center justify-center`}>
-            <FontAwesome name="user" color={'gray'} size={24} style={tw`m-4`} />
             <TextInput
               autoFocus
               id="email"
               inputMode="email"
-              style={tw`w-full p-4 rounded-xl`}
+              style={tw`w-full p-4 rounded-xl text-base`}
               placeholder={t('email-address')}
               placeholderTextColor="gray"
               value={values.email}
@@ -67,14 +66,15 @@ export default function LoginScreen({ navigation }) {
               name="email"
             />
           </View>
-          {errors.email ? <Text style={tw`text-red-500 mt-4`}>{errors.email}</Text> : null}
+          {errors.email ? (
+            <Text style={tw`text-red-500 mt-4 text-base`}>{errors.email}</Text>
+          ) : null}
           <View
-            style={tw`w-full border-2 border-gray-300 rounded-xl mt-8 flex flex-row items-center justify-center`}>
-            <FontAwesome name="lock" color={'gray'} size={24} style={tw`m-4`} />
+            style={tw`w-full border-2 border-gray-300 rounded-xl mt-8 flex flex-row items-center justify-center pr-5 pl-4`}>
             <TextInput
               id="password"
               inputMode="text"
-              style={tw`p-4 w-full rounded-xl`}
+              style={tw`w-full p-4 rounded-xl text-base`}
               value={values.password}
               onChangeText={handleChange('password')}
               placeholder={t('password')}
@@ -83,9 +83,7 @@ export default function LoginScreen({ navigation }) {
               textContentType="password"
               name="password"
             />
-            <Pressable
-              style={tw`m-4`}
-              onPress={() => setPasswordVisibility(passwordVisibility ? false : true)}>
+            <Pressable onPress={() => setPasswordVisibility(passwordVisibility ? false : true)}>
               {passwordVisibility ? (
                 <FontAwesome name="eye" color={'gray'} size={24} />
               ) : (
@@ -94,9 +92,11 @@ export default function LoginScreen({ navigation }) {
             </Pressable>
           </View>
 
-          {errors.password ? <Text style={tw`text-red-500 mt-4`}>{errors.password}</Text> : null}
+          {errors.password ? (
+            <Text style={tw`text-red-500 mt-4 text-base`}>{errors.password}</Text>
+          ) : null}
           <Pressable style={tw`p-4`}>
-            <Text>{t('forgot-password')}</Text>
+            <Text style={tw`text-base`}>{t('forgot-password')}</Text>
           </Pressable>
 
           <Button
@@ -104,10 +104,11 @@ export default function LoginScreen({ navigation }) {
             size="lg"
             onPress={handleSubmit}
             title={t('login')}
+            titleStyle={tw`text-lg`}
             containerStyle={tw`w-full p-4`}
           />
 
-          <Text>{t('or-use')}</Text>
+          <Text style={tw`text-base`}>{t('or-use')}</Text>
           <View style={tw`flex flex-row justify-around`}>
             <Button
               size="lg"
@@ -122,9 +123,9 @@ export default function LoginScreen({ navigation }) {
           </View>
 
           <View style={tw`flex-row`}>
-            <Text>{t('dont-have')}</Text>
+            <Text style={tw`text-base`}>{t('dont-have')}</Text>
             <Pressable onPress={() => navigation.navigate('Register')}>
-              <Text>{t('register')}</Text>
+              <Text style={tw`text-base`}>{t('register')}</Text>
             </Pressable>
           </View>
         </KeyboardAvoidingView>

@@ -1,13 +1,28 @@
-import { StyleSheet, SafeAreaView, ScrollView, View, Text, Pressable } from 'react-native';
+import {
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  View,
+  Text,
+  Pressable,
+  KeyboardAvoidingView,
+  Button,
+  Switch,
+} from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import { auth, database, db } from '../config/firebaseConfig';
 import { Avatar } from '@rneui/base';
 import { AntDesign, FontAwesome5, SimpleLineIcons } from '@expo/vector-icons';
 import { collection, onSnapshot, query } from 'firebase/firestore';
-import tw from 'twrnc';
+import tw, { useAppColorScheme, useDeviceContext } from 'twrnc';
+import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
 
 export default function HomeScreen({ navigation }) {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  useDeviceContext(tw, { withDeviceColorScheme: false });
+  const [colorScheme, toggleColorScheme, setColorScheme] = useAppColorScheme(tw);
   const signOut = () => {
     auth.signOut().then(() => {
       navigation.replace('Login');
@@ -20,25 +35,38 @@ export default function HomeScreen({ navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: {
-        backgroundColor: 'white',
+        backgroundColor: tw`text-black dark:text-white`,
       },
       headerTitleStyle: {
-        color: 'black',
+        color: tw`text-black dark:text-white`,
       },
       headerTintColor: 'black',
       headerLeft: () => {
         return (
           <View style={tw`mr-4`}>
-            <Pressable activeOpacity={0.5} onPress={signOut}>
-              <Avatar
-                rounded
-                source={{
-                  uri:
-                    auth?.currentUser?.photoURL ||
-                    'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png',
-                }}
-              />
-            </Pressable>
+            <Menu>
+              <MenuTrigger>
+                <Avatar
+                  rounded
+                  source={{
+                    uri:
+                      auth?.currentUser?.photoURL ||
+                      'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png',
+                  }}
+                />
+              </MenuTrigger>
+              <MenuOptions>
+                <MenuOption onSelect={signOut}>
+                  <Text style={tw`text-base`}>Logout</Text>
+                </MenuOption>
+                <MenuOption
+                  customStyles={{
+                    optionTouchable: { title: 'Button' },
+                  }}
+                  value={<Switch />}
+                />
+              </MenuOptions>
+            </Menu>
           </View>
         );
       },
@@ -53,7 +81,11 @@ export default function HomeScreen({ navigation }) {
       },
     });
   }, [navigation]);
-  return <Text>Home</Text>;
+  return (
+    <View>
+      <Text>Hello world!</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

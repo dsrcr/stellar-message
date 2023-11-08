@@ -15,8 +15,8 @@ import RegisterScreen from './screens/RegisterScreen';
 import { useState, createContext, useContext, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebaseConfig';
-import { ActivityIndicator } from 'react-native';
-
+import { ActivityIndicator, Button } from 'react-native';
+import { MenuProvider } from 'react-native-popup-menu';
 import './services/i18next';
 
 /**
@@ -48,7 +48,7 @@ const AuthenticatedUserProvider = ({ children }) => {
 function AuthNavigationStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
       <Stack.Screen name="Chat" component={ChatScreen} />
       <Stack.Screen name="Memory" component={MemoryScreen} />
     </Stack.Navigator>
@@ -103,11 +103,13 @@ export default function App() {
 
   return (
     <AuthenticatedUserProvider>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <Navigator />
-        </ThemeProvider>
-      </Provider>
+      <MenuProvider>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <Navigator />
+          </ThemeProvider>
+        </Provider>
+      </MenuProvider>
     </AuthenticatedUserProvider>
   );
 }

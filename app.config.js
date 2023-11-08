@@ -18,6 +18,7 @@ export default {
       supportsTablet: true,
     },
     android: {
+      package: 'com.anonymous.stellarmessage',
       adaptiveIcon: {
         foregroundImage: './assets/logo.png',
         backgroundColor: '#ffffff',
@@ -26,6 +27,7 @@ export default {
     web: {
       favicon: './assets/logo.png',
     },
+    plugins: ['@react-native-google-signin/google-signin'],
     extra: {
       apiKey: process.env.API_KEY,
       authDomain: process.env.AUTH_DOMAIN,
