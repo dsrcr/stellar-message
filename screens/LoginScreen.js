@@ -74,7 +74,7 @@ export default function LoginScreen({ navigation }) {
             <TextInput
               id="password"
               inputMode="text"
-              style={tw`w-full pt-4 pb-4 rounded-xl text-base`}
+              style={tw`w-full pt-4 pb-4 rounded-xl text-base pl-2`}
               value={values.password}
               onChangeText={handleChange('password')}
               placeholder={t('password')}
@@ -128,7 +128,7 @@ export default function LoginScreen({ navigation }) {
           <View style={tw`flex-row items-center justify-center`}>
             <Text style={tw`text-base`}>{t('dont-have')}</Text>
             <Pressable onPress={() => navigation.navigate('Register')}>
-              <Text style={{ fontSize: '1rem', color: '#2089DC' }}>{t('register')}</Text>
+              <Text style={{ fontSize: 16, color: '#2089DC' }}>{t('register')}</Text>
             </Pressable>
           </View>
         </KeyboardAvoidingView>

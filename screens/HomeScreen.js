@@ -25,10 +25,10 @@ export default function HomeScreen({ navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: {
-        backgroundColor: tw`text-black dark:text-white`,
+        // backgroundColor: tw`text-black dark:text-white`,
       },
       headerTitleStyle: {
-        color: tw`text-black dark:text-white`,
+        // color: tw`text-black dark:text-white`,
       },
       headerTintColor: 'black',
       headerLeft: () => {
@@ -49,22 +49,6 @@ export default function HomeScreen({ navigation }) {
                 <MenuOption onSelect={signOut}>
                   <View style={tw`flex flex-row items-center justify-center`}>
                     <Text style={tw`text-base items-center`}>Logout</Text>
-                  </View>
-                </MenuOption>
-                <MenuOption onSelect={() => dispatch(setLanguage(language ? false : true))}>
-                  <View style={tw`flex flex-row items-center justify-around`}>
-                    <Text style={tw`text-base`}>Language:</Text>
-                    {getLanguage ? (
-                      <Text style={tw`text-xl`}>🇺🇸</Text>
-                    ) : (
-                      <Text style={tw`text-xl`}>🇵🇱</Text>
-                    )}
-                  </View>
-                </MenuOption>
-                <MenuOption>
-                  <View style={tw`flex flex-row items-center justify-around`}>
-                    <Text style={tw`text-base`}>Theme: </Text>
-                    <Switch />
                   </View>
                 </MenuOption>
               </MenuOptions>
