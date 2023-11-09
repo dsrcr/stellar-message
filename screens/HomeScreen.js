@@ -1,22 +1,13 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  View,
-  Text,
-  Pressable,
-  KeyboardAvoidingView,
-  Button,
-  Switch,
-} from 'react-native';
-import { GiftedChat } from 'react-native-gifted-chat';
+import { View, Text, Pressable } from 'react-native';
 import { useEffect, useLayoutEffect, useState, useCallback } from 'react';
 import { auth, database, db } from '../config/firebaseConfig';
 import { Avatar } from '@rneui/base';
-import { AntDesign, FontAwesome5, SimpleLineIcons } from '@expo/vector-icons';
-import { collection, onSnapshot, query } from 'firebase/firestore';
+import { AntDesign, FontAwesome, FontAwesome5, SimpleLineIcons } from '@expo/vector-icons';
 import tw, { useAppColorScheme, useDeviceContext } from 'twrnc';
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu';
+import { Switch } from '@rneui/themed';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLanguage, getLanguage } from '../features/settingsSlice';
 
 export default function HomeScreen({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -29,9 +20,8 @@ export default function HomeScreen({ navigation }) {
     });
   };
 
-  const onSend = useCallback((messages = []) => {
-    setMessages((previousMessages) => GiftedChat.append(previousMessages, messages));
-  }, []);
+  const dispatch = useDispatch();
+  console.log(getLanguage);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerStyle: {
@@ -43,7 +33,7 @@ export default function HomeScreen({ navigation }) {
       headerTintColor: 'black',
       headerLeft: () => {
         return (
-          <View style={tw`mr-4`}>
+          <View style={tw`m-4`}>
             <Menu>
               <MenuTrigger>
                 <Avatar
@@ -55,16 +45,28 @@ export default function HomeScreen({ navigation }) {
                   }}
                 />
               </MenuTrigger>
-              <MenuOptions>
+              <MenuOptions customStyles={tw`flex flex-row`}>
                 <MenuOption onSelect={signOut}>
-                  <Text style={tw`text-base`}>Logout</Text>
+                  <View style={tw`flex flex-row items-center justify-center`}>
+                    <Text style={tw`text-base items-center`}>Logout</Text>
+                  </View>
                 </MenuOption>
-                <MenuOption
-                  customStyles={{
-                    optionTouchable: { title: 'Button' },
-                  }}
-                  value={<Switch />}
-                />
+                <MenuOption onSelect={() => dispatch(setLanguage(language ? false : true))}>
+                  <View style={tw`flex flex-row items-center justify-around`}>
+                    <Text style={tw`text-base`}>Language:</Text>
+                    {getLanguage ? (
+                      <Text style={tw`text-xl`}>🇺🇸</Text>
+                    ) : (
+                      <Text style={tw`text-xl`}>🇵🇱</Text>
+                    )}
+                  </View>
+                </MenuOption>
+                <MenuOption>
+                  <View style={tw`flex flex-row items-center justify-around`}>
+                    <Text style={tw`text-base`}>Theme: </Text>
+                    <Switch />
+                  </View>
+                </MenuOption>
               </MenuOptions>
             </Menu>
           </View>
@@ -74,7 +76,7 @@ export default function HomeScreen({ navigation }) {
         return (
           <View style={tw`flex-row flex justify-between mr-2 items-center`}>
             <Pressable>
-              <AntDesign name="camerao" size={24} color={'black'} />
+              <FontAwesome name="camera" size={24} color={'gray'} />
             </Pressable>
           </View>
         );
@@ -87,12 +89,3 @@ export default function HomeScreen({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  headerRight: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 80,
-    marginRight: 20,
-  },
-});

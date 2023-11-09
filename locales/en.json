@@ -7,5 +7,6 @@
   "dont-have": "Don't have an account? ",
   "register": "Register",
   "confirm-password": "Confirm Password",
-  "already-have": "Already have an account? "
+  "already-have": "Already have an account? ",
+  "logout": "Logout"
 }

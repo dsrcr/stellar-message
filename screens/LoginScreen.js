@@ -74,7 +74,7 @@ export default function LoginScreen({ navigation }) {
             <TextInput
               id="password"
               inputMode="text"
-              style={tw`w-full p-4 rounded-xl text-base`}
+              style={tw`w-full pt-4 pb-4 rounded-xl text-base`}
               value={values.password}
               onChangeText={handleChange('password')}
               placeholder={t('password')}
@@ -105,6 +105,7 @@ export default function LoginScreen({ navigation }) {
             onPress={handleSubmit}
             title={t('login')}
             titleStyle={tw`text-lg`}
+            buttonStyle={tw`text-lg rounded-xl`}
             containerStyle={tw`w-full p-4`}
           />
 
@@ -113,19 +114,21 @@ export default function LoginScreen({ navigation }) {
             <Button
               size="lg"
               containerStyle={tw`p-4 min-w-41`}
+              buttonStyle={tw`text-lg rounded-xl`}
               title={<FontAwesome5 name="google" color="white" size={24} />}
             />
             <Button
               size="lg"
               containerStyle={tw`p-4 min-w-41`}
+              buttonStyle={tw`text-lg rounded-xl`}
               title={<FontAwesome5 name="apple" color="white" size={24} />}
             />
           </View>
 
-          <View style={tw`flex-row`}>
+          <View style={tw`flex-row items-center justify-center`}>
             <Text style={tw`text-base`}>{t('dont-have')}</Text>
             <Pressable onPress={() => navigation.navigate('Register')}>
-              <Text style={tw`text-base`}>{t('register')}</Text>
+              <Text style={{ fontSize: '1rem', color: '#2089DC' }}>{t('register')}</Text>
             </Pressable>
           </View>
         </KeyboardAvoidingView>

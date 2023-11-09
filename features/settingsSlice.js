@@ -37,7 +37,11 @@ export const settingsSlice = createSlice({
       state.settings = action.payload;
     },
     setLanguage: (state, action) => {
-      state.language = action.payload;
+      if (action.payload === false) {
+        state.language = 'en';
+      } else {
+        state.language = 'pl';
+      }
     },
   },
 });

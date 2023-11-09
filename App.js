@@ -103,13 +103,13 @@ export default function App() {
 
   return (
     <AuthenticatedUserProvider>
-      <MenuProvider>
-        <Provider store={store}>
+      <Provider store={store}>
+        <MenuProvider>
           <ThemeProvider theme={theme}>
             <Navigator />
           </ThemeProvider>
-        </Provider>
-      </MenuProvider>
+        </MenuProvider>
+      </Provider>
     </AuthenticatedUserProvider>
   );
 }
