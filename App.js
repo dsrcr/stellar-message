@@ -15,7 +15,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import { useState, createContext, useContext, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './config/firebaseConfig';
-import { ActivityIndicator, Button } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import { MenuProvider } from 'react-native-popup-menu';
 import './services/i18next';
 
@@ -98,7 +98,7 @@ export default function App() {
   });
 
   const theme = createTheme({
-    mode: 'dark',
+    mode: 'light',
   });
 
   return (
