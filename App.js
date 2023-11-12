@@ -19,6 +19,7 @@ import { ActivityIndicator } from 'react-native';
 import { MenuProvider } from 'react-native-popup-menu';
 import './services/i18next';
 import CreateChatScreen from './screens/CreateChatScreen';
+import CameraScreen from './screens/CameraScreen';
 
 /**
  * App Component
@@ -52,6 +53,7 @@ function AuthNavigationStack() {
       <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
       <Stack.Screen name="Chat" component={ChatScreen} />
       <Stack.Screen name="Memory" component={MemoryScreen} />
+      <Stack.Screen name="Camera" component={CameraScreen} />
       <Stack.Screen name="CreateChat" component={CreateChatScreen} />
     </Stack.Navigator>
   );
@@ -75,7 +77,6 @@ function Navigator() {
       authenticatedUser ? setUser(authenticatedUser) : setUser(null);
       setLoading(false);
     });
-    console.log('User', user);
     return () => unsubscribe();
   }, []);
 
@@ -104,14 +105,14 @@ export default function App() {
   });
 
   return (
-    <AuthenticatedUserProvider>
-      <Provider store={store}>
+    <Provider store={store}>
+      <AuthenticatedUserProvider>
         <MenuProvider>
           <ThemeProvider theme={theme}>
             <Navigator />
           </ThemeProvider>
         </MenuProvider>
-      </Provider>
-    </AuthenticatedUserProvider>
+      </AuthenticatedUserProvider>
+    </Provider>
   );
 }

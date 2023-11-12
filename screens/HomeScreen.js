@@ -11,22 +11,22 @@ import { setLanguage, getLanguage } from '../features/settingsSlice';
 import ChatListItem from '../components/ChatListItem';
 import { collection, getDocs, onSnapshot, query, where } from 'firebase/firestore';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { setUserInfo } from '../features/userSlice';
+import { setTheme } from '../features/themeSlice';
 
 export default function HomeScreen({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
   const [chats, setChats] = useState([]);
   const [recipientChats, setRecipientChats] = useState([]);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
-  useDeviceContext(tw, { withDeviceColorScheme: false });
+  useDeviceContext(tw, { withDeviceColorScheme: true });
   const [colorScheme, toggleColorScheme, setColorScheme] = useAppColorScheme(tw);
+  console.log(colorScheme, 'colorScheme');
   const signOut = () => {
     auth.signOut().then(() => {
       navigation.replace('Login');
     });
   };
-
-  console.log(auth.currentUser);
-  console.log('chats', chats);
 
   useEffect(() => {
     const q = query(collection(database, 'chats'));
@@ -58,17 +58,18 @@ export default function HomeScreen({ navigation }) {
     return unsubscribe;
   }, []);
 
+  const enterChat = (id, chatName) => {
+    navigation.navigate('Chat', {
+      id,
+      chatName,
+    });
+  };
+
   const dispatch = useDispatch();
-  console.log(getLanguage);
+  dispatch(setUserInfo(auth?.currentUser?.toJSON()));
+  dispatch(setTheme(colorScheme));
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerStyle: {
-        // backgroundColor: tw`text-black dark:text-white`,
-      },
-      headerTitleStyle: {
-        // color: tw`text-black dark:text-white`,
-      },
-      headerTintColor: 'black',
       headerLeft: () => {
         return (
           <View style={tw`m-4`}>
@@ -83,10 +84,13 @@ export default function HomeScreen({ navigation }) {
                   }}
                 />
               </MenuTrigger>
-              <MenuOptions customStyles={tw`flex flex-row`}>
+              <MenuOptions customStyles={tw`flex flex-row gap-4`}>
                 <MenuOption onSelect={signOut}>
                   <View style={tw`flex flex-row items-center justify-center`}>
                     <Text style={tw`text-base items-center`}>Logout</Text>
+                  </View>
+                  <View style={tw`flex flex-row items-center justify-center`}>
+                    <Text style={tw`text-base items-center`}>Settings</Text>
                   </View>
                 </MenuOption>
               </MenuOptions>
@@ -97,7 +101,7 @@ export default function HomeScreen({ navigation }) {
       headerRight: () => {
         return (
           <View style={tw`flex-row flex justify-between mr-2 items-center gap-4`}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate('Camera')}>
               <FontAwesome name="camera" size={24} color={'gray'} />
             </Pressable>
             <Pressable onPress={() => navigation.navigate('Memory')}>
@@ -112,10 +116,22 @@ export default function HomeScreen({ navigation }) {
     <GestureHandlerRootView style={tw`flex flex-1`}>
       <ScrollView>
         {chats.map((chat) => (
-          <ChatListItem chatName={chat.chatName} key={chat.id} id={chat.id} />
+          <ChatListItem
+            chatName={chat.data.chatName}
+            key={chat.id}
+            id={chat.id}
+            chatImage={chat.data.image}
+            enterChat={enterChat}
+          />
         ))}
         {recipientChats.map((chat) => (
-          <ChatListItem chatName={chat.chatName} key={chat.id} id={chat.id} />
+          <ChatListItem
+            chatName={chat.data.chatName}
+            key={chat.id}
+            id={chat.id}
+            chatImage={chat.data.image}
+            enterChat={enterChat}
+          />
         ))}
       </ScrollView>
       <View style={tw`justify-end items-end flex`}>

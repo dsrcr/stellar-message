@@ -262,7 +262,7 @@ exports[`ChatListItem renders UserListItem correctly 1`] = `
             "backgroundColor": "transparent",
             "color": "#242424",
             "fontSize": 17,
-            "fontWeight": "800",
+            "fontWeight": "600",
           }
         }
         testID="listItemTitle"

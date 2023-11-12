@@ -5,6 +5,11 @@ import { database } from '../config/firebaseConfig';
 import UserListItem from '../components/UserListItem';
 
 export default function CreateChatScreen({ navigation }) {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'Add Chat',
+    });
+  }, [navigation]);
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const userQuery = query(collection(database, 'users'));

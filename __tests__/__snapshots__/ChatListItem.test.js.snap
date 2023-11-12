@@ -143,7 +143,7 @@ exports[`ChatListItem renders ChatListItem correctly 1`] = `
           onLoad={[Function]}
           source={
             {
-              "uri": "https://exhibitdev.files.wordpress.com/2014/01/bch8ogfcyaadpji-jpg-large.jpeg",
+              "uri": "https://img.favpng.com/22/13/18/stock-photography-businessperson-business-man-advertising-royalty-free-png-favpng-Mb7i3HLqZYr4A0wXwFra78VBU.jpg",
             }
           }
           style={
@@ -292,7 +292,7 @@ exports[`ChatListItem renders ChatListItem correctly 1`] = `
             "backgroundColor": "transparent",
             "color": "#242424",
             "fontSize": 17,
-            "fontWeight": "800",
+            "fontWeight": "500",
           }
         }
         testID="listItemTitle"

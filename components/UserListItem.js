@@ -11,7 +11,7 @@ export default function UserListItem({ id, username, email, enterChat, url }) {
         }}
       />
       <ListItem.Content>
-        <ListItem.Title style={{ fontWeight: '800' }}>{username}</ListItem.Title>
+        <ListItem.Title style={{ fontWeight: '600' }}>{username}</ListItem.Title>
         <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail">
           {email}
         </ListItem.Subtitle>
