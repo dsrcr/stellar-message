@@ -1,7 +1,7 @@
 import { ListItem, Avatar } from '@rneui/themed';
-import { StyleSheet } from 'react-native';
+import tw from 'twrnc';
 
-export default function ChatListItem({ id, chatName, enterChat }) {
+export default function ChatListItem({ id, chatName, enterChat, chatImage }) {
   return (
     <ListItem key={id} bottomDivider onPress={() => enterChat(id, chatName)}>
       <Avatar
