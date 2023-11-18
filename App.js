@@ -91,6 +91,10 @@ function Navigator() {
   );
 }
 
+const theme = createTheme({
+  mode: 'light',
+});
+
 export default function App() {
   const store = configureStore({
     reducer: {
@@ -98,10 +102,6 @@ export default function App() {
       userSlice,
       settingsSlice,
     },
-  });
-
-  const theme = createTheme({
-    mode: 'light',
   });
 
   return (
