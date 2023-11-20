@@ -3,6 +3,7 @@ import 'dotenv/config';
 export default {
   expo: {
     name: 'stellar-message',
+    owner: 'dsrcr',
     slug: 'stellar-message',
     version: '1.0.0',
     orientation: 'portrait',
@@ -27,6 +28,9 @@ export default {
       favicon: './assets/logo.png',
     },
     extra: {
+      eas: {
+        projectId: 'f1fc955c-95fa-47a2-858e-0dd04681d956',
+      },
       apiKey: process.env.API_KEY,
       authDomain: process.env.AUTH_DOMAIN,
       projectId: process.env.PROJECT_ID,
