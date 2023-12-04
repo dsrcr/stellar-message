@@ -58,6 +58,7 @@ function AuthNavigationStack() {
     </Stack.Navigator>
   );
 }
+
 function NavigationStack() {
   return (
     <Stack.Navigator screenOptions={globalScreenOptions}>
