@@ -7,6 +7,7 @@ import * as ImagePicker from 'expo-image-picker';
 import * as MediaLibrary from 'expo-media-library';
 import { useIsFocused } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
+import tw from 'twrnc';
 
 export default function CameraScreen({ navigation }) {
   const [hasCameraPermissions, setHasCameraPermissions] = useState(false);
@@ -111,7 +112,7 @@ export default function CameraScreen({ navigation }) {
               <Text style={{ fontSize: 12, color: 'white', marginTop: 5 }}>Flip</Text>
             </Pressable>
             <Pressable
-              style={{ alignItems: 'center', marginBottom: 25 }}
+              style={tw`self-center mb-16`}
               onPress={() =>
                 setFlash(
                   type === Camera.Constants.FlashMode.off
@@ -120,38 +121,24 @@ export default function CameraScreen({ navigation }) {
                 )
               }>
               <Feather name="zap" size={24} color={'white'}></Feather>
-              <Text style={{ fontSize: 12, color: 'white', marginTop: 5 }}>Flash</Text>
+              <Text style={tw`mt-2 font-white`}>Flash</Text>
             </Pressable>
           </View>
-          <View style={{ flex: 1, marginHorizontal: 30 }}>
+          <View style={tw`flex-1 mx-8`}>
             <Pressable
               onLongPress={() => recordVideo()}
               onPressOut={() => stopRecording()}
-              style={{
-                borderWidth: 8,
-                borderColor: '#ff404087',
-                backgroundColor: '#ff404087',
-                borderRadius: 100,
-                height: 80,
-                alignSelf: 'center',
-              }}
+              style={tw`border-8 h-16 border-white self-center rounded`}
             />
           </View>
           <View style={{ flex: 1 }}>
             <Pressable
               onPress={() => pickItem()}
-              style={{
-                borderWidth: 2,
-                borderColor: 'white',
-                borderRadius: 10,
-                overflow: 'hidden',
-                width: 50,
-                height: 50,
-              }}>
+              style={tw`w-16 h-16 hidden border-white rounded border-2 overflow-hidden`}>
               {gallery[0] == undefined ? (
                 <></>
               ) : (
-                <Image style={{ width: '50', height: '50' }} source={{ uri: gallery[0] }} />
+                <Image style={tw`w-16 h-16`} source={{ uri: gallery[0] }} />
               )}
             </Pressable>
           </View>

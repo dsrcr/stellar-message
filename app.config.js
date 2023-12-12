@@ -23,6 +23,8 @@ export default {
         foregroundImage: './assets/logo.png',
         backgroundColor: '#ffffff',
       },
+
+      package: 'com.fw.stellarmessage',
     },
     web: {
       favicon: './assets/logo.png',

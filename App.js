@@ -50,7 +50,7 @@ const AuthenticatedUserProvider = ({ children }) => {
 function AuthNavigationStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
+      <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Chat" component={ChatScreen} />
       <Stack.Screen name="Memory" component={MemoryScreen} />
       <Stack.Screen name="Camera" component={CameraScreen} />
