@@ -2,6 +2,8 @@
 
 Stellar Message is a cutting-edge social media app built with React Native, designed to bring people together and foster meaningful connections. This README file provides essential information to get started with the Stellar Message app.
 
+![stellarnet_logo_svg-raw](https://github.com/dsrcr/stellar-message/assets/91333841/e1294e32-df85-42e5-94bf-9612ee86d286)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -11,7 +13,6 @@ Stellar Message is a cutting-edge social media app built with React Native, desi
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -24,7 +25,7 @@ Stellar Message is a cross-platform mobile application developed using React Nat
 - **Messaging**: Seamless chat functionality for private and group conversations.
 - **Media Sharing**: Share photos and videos with your network.
 - **User Profiles**: Personalized user profiles with customizable settings.
-- **Notifications**: Real-time notifications for messages, likes, and more.
+- **Notifications**: Real-time notifications for messages, likes, and more. (currently disabled)
 
 ## Getting Started
 
@@ -61,10 +62,14 @@ bun i
 
 4. Explore the app, create an account, and start connecting with friends.
 
+![Sign-in](https://github.com/dsrcr/stellar-message/assets/91333841/1063f549-6c3c-4a52-bd5a-54d5a915010c)
+![Sign-up](https://github.com/dsrcr/stellar-message/assets/91333841/eb316734-45b1-4f49-96e6-3c9922daee4a)
+![Main](https://github.com/dsrcr/stellar-message/assets/91333841/b58bf979-76e6-4f90-a72a-88d0c7c7d5a4)
+![memories](https://github.com/dsrcr/stellar-message/assets/91333841/ca07287b-3545-433a-bcee-ef31c86f0041)
+![Chat](https://github.com/dsrcr/stellar-message/assets/91333841/ae9b4d08-1086-4be9-bba7-4c49e994993a)
+
+
 ### Contributing
-
-### Licence
-
-This project is licensed under the MIT License. Feel free to use, modify, and distribute it as per the terms of the license.
+Feel free to use, modify, and distribute it as per the terms of the license.
 
 Happy messaging with Stellar Message! 🚀✨
