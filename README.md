@@ -63,12 +63,11 @@ bun i
 3. Open the app on your emulator or physical device using the Expo client.
 
 4. Explore the app, create an account, and start connecting with friends.
-
-![Sign-in](https://github.com/dsrcr/stellar-message/assets/91333841/1063f549-6c3c-4a52-bd5a-54d5a915010c)
-![Sign-up](https://github.com/dsrcr/stellar-message/assets/91333841/eb316734-45b1-4f49-96e6-3c9922daee4a)
-![Main](https://github.com/dsrcr/stellar-message/assets/91333841/b58bf979-76e6-4f90-a72a-88d0c7c7d5a4)
-![memories](https://github.com/dsrcr/stellar-message/assets/91333841/ca07287b-3545-433a-bcee-ef31c86f0041)
-![Chat](https://github.com/dsrcr/stellar-message/assets/91333841/ae9b4d08-1086-4be9-bba7-4c49e994993a)
+![stellar-message-login](https://github.com/dsrcr/stellar-message/assets/91333841/20630351-2ca8-483b-b04c-7fe455508d1b)
+![stellar-message-register](https://github.com/dsrcr/stellar-message/assets/91333841/02154356-9223-40d3-996e-441863cc8a04)
+![home-screen](https://github.com/dsrcr/stellar-message/assets/91333841/0aeab7a8-71e8-44fe-944b-77744c7d7bdc)
+![add-chat-screen](https://github.com/dsrcr/stellar-message/assets/91333841/a7223ea0-4cee-4371-8243-a1798a854e88)
+![chat-screen](https://github.com/dsrcr/stellar-message/assets/91333841/0cf43d14-c96d-4a42-991a-cc4c81b5f5c8)
 
 
 ### Contributing
