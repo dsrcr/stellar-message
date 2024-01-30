@@ -63,7 +63,9 @@ bun i
 3. Open the app on your emulator or physical device using the Expo client.
 
 4. Explore the app, create an account, and start connecting with friends.
-![stellar-message-login](https://github.com/dsrcr/stellar-message/assets/91333841/20630351-2ca8-483b-b04c-7fe455508d1b)
+
+<img src="[https://placekitten.com/300/200](https://github.com/dsrcr/stellar-message/assets/91333841/20630351-2ca8-483b-b04c-7fe455508d1b)" alt="Demo Image 1" width="200" />
+
 ![stellar-message-register](https://github.com/dsrcr/stellar-message/assets/91333841/02154356-9223-40d3-996e-441863cc8a04)
 ![home-screen](https://github.com/dsrcr/stellar-message/assets/91333841/0aeab7a8-71e8-44fe-944b-77744c7d7bdc)
 ![add-chat-screen](https://github.com/dsrcr/stellar-message/assets/91333841/a7223ea0-4cee-4371-8243-a1798a854e88)
