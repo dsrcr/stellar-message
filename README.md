@@ -64,11 +64,11 @@ bun i
 
 4. Explore the app, create an account, and start connecting with friends.
 
-<img src="https://github.com/dsrcr/stellar-message/assets/91333841/20630351-2ca8-483b-b04c-7fe455508d1b" alt="Demo Image 1" width="200" />
-<img src="https://github.com/dsrcr/stellar-message/assets/91333841/02154356-9223-40d3-996e-441863cc8a04" alt="stellar-message-register" width="200" />
-<img src="https://github.com/dsrcr/stellar-message/raw/main/assets/91333841/0aeab7a8-71e8-44fe-944b-77744c7d7bdc" alt="home-screen" width="200" />
-<img src="https://github.com/dsrcr/stellar-message/raw/main/assets/91333841/a7223ea0-4cee-4371-8243-a1798a854e88" alt="add-chat-screen" width="200" />
-<img src="https://github.com/dsrcr/stellar-message/raw/main/assets/91333841/0cf43d14-c96d-4a42-991a-cc4c81b5f5c8" alt="chat-screen" width="200" />
+<img src="https://github.com/dsrcr/stellar-message/assets/91333841/20630351-2ca8-483b-b04c-7fe455508d1b" alt="Demo Image 1" width="500" />
+<img src="https://github.com/dsrcr/stellar-message/assets/91333841/02154356-9223-40d3-996e-441863cc8a04" alt="stellar-message-register" width="500" />
+<img src="https://github.com/dsrcr/stellar-message/assets/91333841/0aeab7a8-71e8-44fe-944b-77744c7d7bdc" alt="home-screen" width="500" />
+<img src="https://github.com/dsrcr/stellar-message/assets/91333841/a7223ea0-4cee-4371-8243-a1798a854e88" alt="add-chat-screen" width="500" />
+<img src="https://github.com/dsrcr/stellar-message/assets/91333841/0cf43d14-c96d-4a42-991a-cc4c81b5f5c8" alt="chat-screen" width="500" />
 
 https://github.com/dsrcr/stellar-message/assets/91333841/02154356-9223-40d3-996e-441863cc8a04
 https://github.com/dsrcr/stellar-message/assets/91333841/02154356-9223-40d3-996e-441863cc8a04
