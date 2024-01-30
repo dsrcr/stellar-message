@@ -1,4 +1,4 @@
-Stellar Message
+# Stellar Message
 
 Stellar Message is a cutting-edge social media app built with React Native, designed to bring people together and foster meaningful connections. This README file provides essential information to get started with the Stellar Message app.
 
