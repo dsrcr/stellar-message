@@ -4,6 +4,8 @@ Stellar Message is a cutting-edge social media app built with React Native, desi
 
 ![stellarnet_logo_svg-raw](https://github.com/dsrcr/stellar-message/assets/91333841/e1294e32-df85-42e5-94bf-9612ee86d286)
 
+<img src="https://github.com/dsrcr/stellar-message/assets/91333841/e1294e32-df85-42e5-94bf-9612ee86d286" alt="Demo Image 1" width="300" />
+
 ## Table of Contents
 
 - [Introduction](#introduction)
